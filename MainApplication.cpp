@@ -9,18 +9,24 @@ using namespace std;
 int main()
 {
 	UserInterface ui;
+	bool run = true;
 	//show to items available with their detail, delivery charge and ask user for input
-	ui.DisplayItems();
-	
-	//take user input and add all items to the basket
-	ui.CreateUsersBasket();
+	while (run == true)
+	{
+		ui.DisplayItems();
 
-	//calculate any discounts, total price of basket and delivery charge
-	ui.CalculateTotal();
+		//take user input and add all items to the basket
+		ui.CreateUsersBasket();
 
-	//display basket and total to the user
-	ui.DisplayTotal();
+		//calculate any discounts, total price of basket and delivery charge
+		ui.CalculateTotal();
 
+		//display basket and total to the user
+		ui.DisplayTotal();
+
+		//ask user if they would like to make a new order
+		run = ui.AskAgain();
+	}
 
 	ui.HoldWindow();
 	return 0;

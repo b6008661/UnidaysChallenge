@@ -20,6 +20,7 @@ public:
 	void CreateUsersBasket();
 	void CalculateTotal();
 	void DisplayTotal();
+	bool AskAgain();
 
 private:
 	double totalPrice;

@@ -59,6 +59,23 @@ void UserInterface::DisplayTotal()
 		<< setprecision(2) << overallTotal;
 
 }
+
+bool UserInterface::AskAgain()
+{
+	string input;
+	cout << "\nWould you like to make a new order(Y/N): ";
+	cin >> input;
+	transform(input.begin(), input.end(), input.begin(), ::toupper); //change to upper case to remove confusion
+	cout << "\n\n";
+	if (input == "Y")
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 void UserInterface::HoldWindow() const {
 	cout << "\n\n";
 	system("pause");
